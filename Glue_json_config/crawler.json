@@ -1,0 +1,17 @@
+{
+  "Name": "raw-data-crawler",
+  "Role": "MyGlueRole",
+  "DatabaseName": "raw_db",
+  "Targets": {
+    "S3Targets": [
+      {
+        "Path": "s3://my-datalake-raw1/"
+      }
+    ]
+  },
+  "TablePrefix": "raw_",
+  "SchemaChangePolicy": {
+    "UpdateBehavior": "UPDATE_IN_DATABASE",
+    "DeleteBehavior": "DEPRECATE_IN_DATABASE"
+  }
+}
