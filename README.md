@@ -25,7 +25,7 @@ End‑to‑end pipeline:
 ├── etl_raw_to_silver.py
 ├── architecture_diagram.png
 ├── sample_data/
-├── scripts/
+├── Glue_json_config/
 └── README.md
 ```
 
@@ -37,7 +37,7 @@ End‑to‑end pipeline:
 
 ## 2. Glue Crawler
 
-Configure crawler to scan **my-datalake-raw1** and create **raw_db**.
+Configure the crawler to scan **my-datalake-raw1** and create **raw_db**.
 
 ## 3. Glue ETL Script
 
@@ -49,7 +49,7 @@ PySpark script performs:
 
 ## 4. Athena Table
 
-Create external parquet table on Silver:
+Create an external parquet table on Silver:
 ```
 MSCK REPAIR TABLE my_silver_table;
 ```
@@ -58,7 +58,7 @@ MSCK REPAIR TABLE my_silver_table;
 Run Athena queries for validation.
 
 ## 6. Error Handling
-Malformed records go to **DLQ bucket**.
+Malformed records go to the **DLQ bucket**.
 
 ## 7. Logging & Monitoring
 CloudWatch Logs & Glue job metrics.
